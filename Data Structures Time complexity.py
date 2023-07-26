@@ -23,13 +23,11 @@ class Cache(Memory):
       data = entry["data"]
     else:
       data = self.main_memory.read(address)
-      # Change the code below
       self.add_entry(address, data)
 
     return data
 
   def replace_entry(self, address, data):
-    # Change the code below
     index = self.random_policy()
     self.data[index] = {"tag": address, "data": data}
 
@@ -44,7 +42,6 @@ class Cache(Memory):
 
     return index
 
-  # Adds data in an empty entry
   def add_entry(self, address, data):
     for entry in self.data:
       if entry["tag"] == None:
